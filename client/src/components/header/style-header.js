@@ -29,12 +29,13 @@ export const HeaderStyled = styled.header`
   }
 
   li a {
+    padding: 1rem;
     font-size: 2.2rem;
     text-decoration: none;
     color: #fff;
     transition: all 0.1s;
     &:hover {
-      border-bottom: 5px solid #d72323;
+      border: 1px solid #d72323;
     }
   }
 

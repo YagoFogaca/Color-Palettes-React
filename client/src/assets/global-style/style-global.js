@@ -16,6 +16,6 @@ export default createGlobalStyle`
     height: 100%;
   }
   body{
-    background-color: #EEEEEE;
+    background-color: #fff;
   }
 `;
