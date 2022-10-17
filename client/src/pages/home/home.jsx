@@ -1,10 +1,10 @@
-import { SectionStyled } from './style-home';
+import { MainStyled } from './style-home';
 import { palettes } from '../../mocks/palettes';
 import { CardPalette } from '../../components/card-palette/card-palette';
 
 export function Home() {
   return (
-    <SectionStyled>
+    <MainStyled>
       {palettes.map((palette, index) => {
         return (
           <CardPalette
@@ -15,6 +15,6 @@ export function Home() {
           />
         );
       })}
-    </SectionStyled>
+    </MainStyled>
   );
 }
