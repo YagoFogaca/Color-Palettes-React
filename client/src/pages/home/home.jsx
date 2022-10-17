@@ -9,6 +9,7 @@ export function Home() {
         return (
           <CardPalette
             key={index}
+            id={palette.id}
             colors={palette.colors}
             creationdate={palette.creationdate}
             likes={palette.likes}
