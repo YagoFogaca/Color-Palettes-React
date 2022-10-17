@@ -14,6 +14,9 @@ export function Header() {
           <li>
             <a href="">Curtidas</a>
           </li>
+          <li>
+            <a href="">Coleção</a>
+          </li>
         </ul>
         <button>Login</button>
       </nav>

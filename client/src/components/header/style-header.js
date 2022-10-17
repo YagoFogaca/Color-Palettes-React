@@ -19,7 +19,7 @@ export const HeaderStyled = styled.header`
   }
 
   ul {
-    width: 50%;
+    width: 60%;
     display: flex;
     justify-content: space-around;
   }
