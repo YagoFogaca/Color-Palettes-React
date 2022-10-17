@@ -34,8 +34,9 @@ export const HeaderStyled = styled.header`
     text-decoration: none;
     color: #fff;
     transition: all 0.1s;
+    border-bottom: 2px solid #d72323;
     &:hover {
-      border: 1px solid #d72323;
+      box-shadow: 0px 0px 5px 2px #d72323;
     }
   }
 
