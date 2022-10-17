@@ -10,7 +10,7 @@ export function App() {
       <Header />
       <BrowserRouter>
         <Routes>
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/palette/:id" element={<Palette />} />
         </Routes>
       </BrowserRouter>
