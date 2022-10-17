@@ -12,7 +12,7 @@ export function CardPalette({ colors, creationdate, likes }) {
     copy(color);
     setTimeout(() => {
       setTextCopy(false);
-    }, 5000);
+    }, 1000);
   }
 
   function controlLike() {
