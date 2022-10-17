@@ -1,8 +1,19 @@
 import { useState } from 'react';
 import { SectionStyled } from './style-card-palette';
+import copy from 'copy-to-clipboard';
+
 export function CardPalette({ colors, creationdate, likes }) {
   const [like, setLike] = useState('#9a9898');
   const [numLike, setNumLike] = useState(+likes);
+  const [textCopy, setTextCopy] = useState(false);
+
+  function copyToClipboard(color) {
+    setTextCopy(true);
+    copy(color);
+    setTimeout(() => {
+      setTextCopy(false);
+    }, 5000);
+  }
 
   function controlLike() {
     if (like === '#ff0000') {
@@ -20,11 +31,21 @@ export function CardPalette({ colors, creationdate, likes }) {
         {colors.map((color, index) => {
           return (
             <div
+              className="card-color"
               key={index}
               style={{
                 backgroundColor: color,
               }}
-            ></div>
+            >
+              <span
+                onClick={(color) => {
+                  copyToClipboard(color.target.outerText);
+                }}
+                className="copy-color"
+              >
+                {textCopy ? 'Copiado' : color}
+              </span>
+            </div>
           );
         })}
       </aside>
