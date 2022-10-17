@@ -12,6 +12,7 @@ export function Home() {
             colors={palette.colors}
             creationdate={palette.creationdate}
             likes={palette.likes}
+            widthMax={'260px'}
           />
         );
       })}

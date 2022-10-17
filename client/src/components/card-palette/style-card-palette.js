@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const SectionStyled = styled.section`
   width: 100%;
-  max-width: 260px;
   min-width: 150px;
   height: fit-content;
   .card-colors {

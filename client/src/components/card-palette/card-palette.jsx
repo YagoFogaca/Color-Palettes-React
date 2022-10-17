@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { SectionStyled } from './style-card-palette';
 import copy from 'copy-to-clipboard';
 
-export function CardPalette({ colors, creationdate, likes }) {
+export function CardPalette({ colors, creationdate, likes, widthMax }) {
   const [like, setLike] = useState('#9a9898');
   const [numLike, setNumLike] = useState(+likes);
   const [textCopy, setTextCopy] = useState(false);
@@ -26,7 +26,11 @@ export function CardPalette({ colors, creationdate, likes }) {
   }
 
   return (
-    <SectionStyled>
+    <SectionStyled
+      style={{
+        maxWidth: widthMax,
+      }}
+    >
       <aside className="card-colors">
         {colors.map((color, index) => {
           return (
