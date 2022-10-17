@@ -19,6 +19,7 @@ export const SectionStyled = styled.section`
     display: flex;
     align-items: flex-end;
     padding: 1rem 1rem 0 0;
+    cursor: pointer;
   }
 
   .copy-color {
@@ -28,7 +29,7 @@ export const SectionStyled = styled.section`
     border-radius: 5px;
     font-size: 1.6rem;
     color: #fff;
-    cursor: pointer;
+    cursor: copy;
   }
 
   .card-color:hover .copy-color {
