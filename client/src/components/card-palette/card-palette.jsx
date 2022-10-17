@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { SectionStyled } from './style-card-palette';
 import copy from 'copy-to-clipboard';
 
@@ -7,7 +6,6 @@ export function CardPalette({ colors, creationdate, likes, widthMax, id }) {
   const [like, setLike] = useState('#9a9898');
   const [numLike, setNumLike] = useState(+likes);
   const [textCopy, setTextCopy] = useState(false);
-  const navigate = useNavigate();
 
   function copyToClipboard(color) {
     setTextCopy(true);
@@ -33,12 +31,7 @@ export function CardPalette({ colors, creationdate, likes, widthMax, id }) {
         maxWidth: widthMax,
       }}
     >
-      <aside
-        className="card-colors"
-        onClick={() => {
-          navigate(`/palette/${id}`);
-        }}
-      >
+      <aside className="card-colors">
         {colors.map((color, index) => {
           return (
             <div
