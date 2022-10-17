@@ -9,6 +9,8 @@ export const SectionStyled = styled.section`
     display: flex;
     flex-direction: column;
     margin-bottom: 1.7rem;
+    overflow: hidden;
+    border-radius: 10px;
   }
 
   div {
@@ -18,6 +20,7 @@ export const SectionStyled = styled.section`
 
   .card-info {
     display: flex;
+    flex-direction: row-reverse;
     justify-content: space-around;
     align-items: center;
   }
