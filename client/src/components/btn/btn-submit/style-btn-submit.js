@@ -12,10 +12,4 @@ export const BtnStyled = styled.button`
   &:hover {
     box-shadow: 0 0 8px 0 #000;
   }
-
-  @media (max-width: 768px) {
-    &: {
-      padding: 0.8rem 1.2rem;
-    }
-  }
 `;
