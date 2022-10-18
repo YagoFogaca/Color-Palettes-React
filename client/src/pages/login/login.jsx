@@ -1,43 +1,20 @@
-import { BtnSubmit } from '../../components/btn/btn-submit/btn-submit';
 import { SectionStyled } from './style-login';
-import { Input } from '../../components/input/input';
+import { FormLogin } from '../../components/forms/form-login/form-login';
+import { FormRegistration } from '../../components/forms/form-registration/form-registration';
+import { useState } from 'react';
 
 export function Login() {
-  function login(event) {
-    event.preventDefault();
-    const userLogin = {
-      email: event.target.email.value,
-      password: event.target.password.value,
-    };
+  const [modifyForm, setModifyForm] = useState(false);
+
+  function formModify() {
+    setModifyForm(!modifyForm);
   }
 
   return (
     <SectionStyled>
       <section id="section-form">
         <h2>Faça login</h2>
-        <form className="form-login" onSubmit={login}>
-          <label htmlFor="email">Email:</label>
-          <Input id="email" name="email" type="email" placeholder="Email..." />
-          <label htmlFor="password">Password:</label>
-          <Input
-            id="password"
-            name="password"
-            type="password"
-            placeholder="Senha"
-          />
-          <div className="card-btn">
-            <BtnSubmit
-              text={'Login'}
-              backgroundColorP={'#d72323'}
-              widthP={'auto'}
-            />
-            <BtnSubmit
-              text={'Cadastro'}
-              backgroundColorP={'#fff'}
-              widthP={'auto'}
-            />
-          </div>
-        </form>
+        {modifyForm ? <FormRegistration /> : <FormLogin />}
       </section>
     </SectionStyled>
   );

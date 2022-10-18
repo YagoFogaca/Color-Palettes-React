@@ -10,12 +10,12 @@ export const SectionStyled = styled.section`
   #section-form {
     width: 30%;
     min-width: 260px;
-    height: 300px;
     background-color: #303841;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 1rem;
     color: #fff;
     border-radius: 10px;
   }
