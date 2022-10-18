@@ -1,5 +1,6 @@
 import { BtnSubmit } from '../../components/btn/btn-submit/btn-submit';
 import { SectionStyled } from './style-login';
+import { Input } from '../../components/input/input';
 
 export function Login() {
   function login(event) {
@@ -16,9 +17,9 @@ export function Login() {
         <h2>Faça login</h2>
         <form className="form-login" onSubmit={login}>
           <label htmlFor="email">Email:</label>
-          <input id="email" name="email" type="email" placeholder="Email..." />
+          <Input id="email" name="email" type="email" placeholder="Email..." />
           <label htmlFor="password">Password:</label>
-          <input
+          <Input
             id="password"
             name="password"
             type="password"
