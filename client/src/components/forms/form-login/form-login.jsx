@@ -2,7 +2,7 @@ import { FormStyled } from '../style-form';
 import { Input } from '../../input/input';
 import { BtnSubmit } from '../../btn/btn-submit/btn-submit';
 
-export function FormLogin() {
+export function FormLogin({ formModify }) {
   function login(event) {
     event.preventDefault();
     const userLogin = {
@@ -32,6 +32,8 @@ export function FormLogin() {
             text={'Cadastro'}
             backgroundColorP={'#fff'}
             widthP={'auto'}
+            typeP={'button'}
+            functionOnClick={formModify}
           />
         </div>
       </FormStyled>

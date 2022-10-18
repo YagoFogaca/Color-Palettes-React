@@ -2,7 +2,7 @@ import { FormStyled } from '../style-form';
 import { Input } from '../../input/input';
 import { BtnSubmit } from '../../btn/btn-submit/btn-submit';
 
-export function FormRegistration() {
+export function FormRegistration({ formModify }) {
   function registration(event) {
     event.preventDefault();
     const userLogin = {
@@ -38,7 +38,13 @@ export function FormRegistration() {
             backgroundColorP={'#d72323'}
             widthP={'auto'}
           />
-          <BtnSubmit text={'Login'} backgroundColorP={'#fff'} widthP={'auto'} />
+          <BtnSubmit
+            text={'Login'}
+            backgroundColorP={'#fff'}
+            widthP={'auto'}
+            typeP={'button'}
+            functionOnClick={formModify}
+          />
         </div>
       </FormStyled>
     </>
