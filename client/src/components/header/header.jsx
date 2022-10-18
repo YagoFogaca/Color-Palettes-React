@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { HeaderStyled } from './style-header';
 
 export function Header() {
@@ -7,17 +8,15 @@ export function Header() {
         <img src="./img/logo-remove.png" alt="Logo" />
       </figure>
       <nav id="navbar">
-        <ul>
-          <li>
-            <a href="">Criar</a>
-          </li>
-          <li>
-            <a href="">Curtidas</a>
-          </li>
-          <li>
-            <a href="">Coleção</a>
-          </li>
-        </ul>
+        <Link className="navbar-link" to="*">
+          Criar
+        </Link>
+        <Link className="navbar-link" to="*">
+          Curtidas
+        </Link>
+        <Link className="navbar-link" to="*">
+          Coleção
+        </Link>
         <button>Login</button>
       </nav>
     </HeaderStyled>

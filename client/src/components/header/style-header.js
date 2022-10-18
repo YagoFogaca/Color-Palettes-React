@@ -18,17 +18,7 @@ export const HeaderStyled = styled.header`
     align-items: center;
   }
 
-  ul {
-    width: 60%;
-    display: flex;
-    justify-content: space-around;
-  }
-
-  li {
-    list-style: none;
-  }
-
-  li a {
+  .navbar-link {
     padding: 1rem;
     font-size: 2.2rem;
     text-decoration: none;
