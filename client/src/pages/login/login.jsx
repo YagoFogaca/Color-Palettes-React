@@ -13,6 +13,7 @@ export function Login() {
   return (
     <SectionStyled>
       <section id="section-form">
+        <h2>Faça login</h2>
         <form className="form-login" onSubmit={login}>
           <label htmlFor="email">Email:</label>
           <input id="email" name="email" type="email" placeholder="Email..." />

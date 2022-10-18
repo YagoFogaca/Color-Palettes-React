@@ -12,12 +12,20 @@ export const SectionStyled = styled.section`
     height: 300px;
     background-color: #303841;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     color: #fff;
     border-radius: 10px;
   }
 
+  h2 {
+    margin-top: 2rem;
+    font-size: 2.6rem;
+  }
+
   .form-login {
+    width: 80%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -27,6 +35,7 @@ export const SectionStyled = styled.section`
   }
 
   .form-login input {
+    width: 100%;
     font-size: 1.6rem;
     padding: 0.8rem 1.2rem;
     box-shadow: inset 0 1px 2px rgb(203 203 210 / 40%),
@@ -41,6 +50,6 @@ export const SectionStyled = styled.section`
   .card-btn {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 `;
