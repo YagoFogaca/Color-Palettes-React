@@ -13,11 +13,17 @@ export function Login() {
   return (
     <SectionStyled>
       <section id="section-form">
-        <h2>Faça login</h2>
+        <h2>{}</h2>
         {modifyForm ? (
-          <FormRegistration formModify={formModify} />
+          <>
+            <h2>Cadastro</h2>
+            <FormRegistration formModify={formModify} />
+          </>
         ) : (
-          <FormLogin formModify={formModify} />
+          <>
+            <h2>Login</h2>
+            <FormLogin formModify={formModify} />
+          </>
         )}
       </section>
     </SectionStyled>
