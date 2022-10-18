@@ -30,7 +30,7 @@ export const HeaderStyled = styled.header`
     }
   }
 
-  button {
+  .navbar-link-login {
     width: 100%;
     max-width: 100px;
     min-width: 50px;
@@ -39,6 +39,7 @@ export const HeaderStyled = styled.header`
     border: 2px solid #d72323;
     border-radius: 5px;
     font-size: 2.2rem;
+    text-align: center;
     color: #eeeeee;
     cursor: pointer;
     transition: all 0.1s linear;

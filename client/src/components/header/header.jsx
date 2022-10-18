@@ -17,7 +17,7 @@ export function Header() {
         <Link className="navbar-link" to="*">
           Coleção
         </Link>
-        <button>Login</button>
+        <Link className="navbar-link navbar-link-login">Login</Link>
       </nav>
     </HeaderStyled>
   );
