@@ -5,7 +5,7 @@ export const HeaderStyled = styled.header`
   background-color: #303841;
   align-items: center;
   justify-content: space-between;
-  padding: 10px;
+  padding: 0 10px;
 
   img {
     width: 100px;
@@ -20,7 +20,7 @@ export const HeaderStyled = styled.header`
 
   .navbar-link {
     padding: 1rem;
-    font-size: 2.2rem;
+    font-size: 2rem;
     text-decoration: none;
     color: #fff;
     transition: all 0.1s;
@@ -38,7 +38,7 @@ export const HeaderStyled = styled.header`
     background-color: transparent;
     border: 2px solid #d72323;
     border-radius: 5px;
-    font-size: 2.2rem;
+    font-size: 2rem;
     text-align: center;
     color: #eeeeee;
     cursor: pointer;
