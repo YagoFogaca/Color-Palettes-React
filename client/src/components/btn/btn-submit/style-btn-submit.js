@@ -8,7 +8,7 @@ export const BtnStyled = styled.button`
   font-size: 1.4rem;
   font-weight: 700;
   min-width: 55px;
-  padding: 0.6rem 0.8rem;
+  padding: 0.8rem 3.2rem;
   transition: all 0.5s;
   &:hover {
     box-shadow: 0 0 8px 0 #000;
