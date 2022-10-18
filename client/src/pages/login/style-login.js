@@ -9,6 +9,7 @@ export const SectionStyled = styled.section`
 
   #section-form {
     width: 30%;
+    min-width: 260px;
     height: 300px;
     background-color: #303841;
     display: flex;
@@ -42,5 +43,7 @@ export const SectionStyled = styled.section`
     width: 100%;
     display: flex;
     justify-content: space-around;
+    flex-direction: column;
+    gap: 1rem;
   }
 `;
