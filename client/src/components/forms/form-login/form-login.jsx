@@ -15,7 +15,7 @@ export function FormLogin({ formModify }) {
       <FormStyled className="form-login" onSubmit={login}>
         <label htmlFor="email">Email:</label>
         <Input id="email" name="email" type="email" placeholder="Email..." />
-        <label htmlFor="password">Password:</label>
+        <label htmlFor="password">Senha:</label>
         <Input
           id="password"
           name="password"
