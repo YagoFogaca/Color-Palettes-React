@@ -24,12 +24,19 @@ export function FormRegistration({ formModify }) {
         <label htmlFor="password">Email:</label>
         <Input id="email" name="email" type="email" placeholder="Email..." />
 
-        <label htmlFor="password">Password:</label>
+        <label htmlFor="password">Senha:</label>
         <Input
           id="password"
           name="password"
           type="password"
           placeholder="Senha"
+        />
+        <label htmlFor="confirm_password">Confirme a senha:</label>
+        <Input
+          id="confirm_password"
+          name="confirm_password"
+          type="password"
+          placeholder="Confirme a senha"
         />
 
         <div className="card-btn">
