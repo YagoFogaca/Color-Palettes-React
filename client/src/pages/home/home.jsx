@@ -1,8 +1,20 @@
 import { MainStyled } from './style-home';
-import { palettes } from '../../mocks/palettes';
+// import { palettes } from '../../mocks/palettes';
 import { CardPalette } from '../../components/card-palette/card-palette';
+import { api } from '../../utils/api/api';
+import { useEffect, useState } from 'react';
 
 export function Home() {
+  const [palettes, setPalettes] = useState([]);
+  async function palettesApi() {
+    const getAllPalettes = await api.getAllPalettes();
+    setPalettes(getAllPalettes);
+  }
+
+  useEffect(() => {
+    palettesApi();
+  }, []);
+
   return (
     <MainStyled>
       {palettes.map((palette, index) => {
