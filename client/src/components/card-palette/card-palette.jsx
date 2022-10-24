@@ -2,7 +2,7 @@ import { useState } from 'react';
 import copy from 'copy-to-clipboard';
 import { SectionStyled } from './style-card-palette';
 
-export function CardPalette({ colors, creationdate, likes, widthMax, id }) {
+export function CardPalette({ colors, creationdate, widthMax }) {
   const [textCopy, setTextCopy] = useState(false);
 
   function copyToClipboard(color) {
