@@ -11,7 +11,7 @@ export function Header() {
       </Link>
 
       <nav id="navbar">
-        <Link className="navbar-link" to="*">
+        <Link className="navbar-link" to="/create-palette">
           Criar
         </Link>
         <Link className="navbar-link" to="*">
