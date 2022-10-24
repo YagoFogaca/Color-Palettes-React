@@ -26,6 +26,10 @@ export function Home() {
             creationdate={palette.creationdate}
             likes={palette.likes}
             widthMax={'260px'}
+            text={'Ver mais'}
+            backgroundColorP={'#f3f3f3'}
+            widthP={'auto'}
+            // functionOnClick={}
           />
         );
       })}

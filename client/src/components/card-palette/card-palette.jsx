@@ -1,8 +1,17 @@
 import { useState } from 'react';
 import copy from 'copy-to-clipboard';
 import { SectionStyled } from './style-card-palette';
+import { BtnSubmit } from '../btn/btn-submit/btn-submit';
 
-export function CardPalette({ colors, creationdate, widthMax }) {
+export function CardPalette({
+  colors,
+  creationdate,
+  widthMax,
+  text,
+  backgroundColorP,
+  widthP,
+  functionOnClick,
+}) {
   const [textCopy, setTextCopy] = useState(false);
 
   function copyToClipboard(color) {
@@ -42,7 +51,12 @@ export function CardPalette({ colors, creationdate, widthMax }) {
         })}
       </aside>
       <aside className="card-info">
-        <p>{creationdate}</p>
+        <BtnSubmit
+          text={text}
+          backgroundColorP={backgroundColorP}
+          widthP={widthP}
+          // functionOnClick={}
+        />
       </aside>
     </SectionStyled>
   );
