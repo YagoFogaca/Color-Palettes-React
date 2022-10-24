@@ -1,15 +1,31 @@
 import { FormStyled } from '../style-form';
 import { Input } from '../../input/input';
 import { BtnSubmit } from '../../btn/btn-submit/btn-submit';
+import { api } from '../../../utils/api/api';
+import { useNavigate } from 'react-router-dom';
 
 export function FormLogin({ formModify }) {
-  function login(event) {
+  let navigate = useNavigate();
+
+  async function login(event) {
     event.preventDefault();
-    const userLogin = {
-      email: event.target.email.value,
-      password: event.target.password.value,
-    };
+
+    try {
+      const userLogin = {
+        email: event.target.email.value,
+        password: event.target.password.value,
+      };
+
+      const user = await api.login(userLogin);
+      localStorage.setItem('token', user.data.token);
+      localStorage.setItem('userId', user.data.user.id);
+      localStorage.setItem('likesUser', user.data.user.likes);
+      navigate('/');
+    } catch (err) {
+      console.log(err);
+    }
   }
+
   return (
     <>
       <FormStyled className="form-login" onSubmit={login}>
@@ -40,3 +56,8 @@ export function FormLogin({ formModify }) {
     </>
   );
 }
+
+// {
+//   "email": "admin@gmail.com",
+//   "password": "admin123"
+// }
