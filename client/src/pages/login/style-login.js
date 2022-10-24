@@ -21,7 +21,7 @@ export const SectionStyled = styled.section`
   }
 
   h2 {
-    margin-top: 2rem;
+    margin-top: 1rem;
     font-size: 2.6rem;
   }
 
