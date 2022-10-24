@@ -34,13 +34,13 @@ export class api {
     }
   }
 
-  static async updateUser(user) {
+  static async updateUser(user, user_id) {
+    console.log(user);
     try {
       const userUpdated = await axios.patch(
-        '/palette/update-palette/' + user.id,
+        '/user/update-user/' + user_id,
         user,
       );
-
       return userUpdated;
     } catch (err) {
       console.log(err);
