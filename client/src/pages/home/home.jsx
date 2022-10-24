@@ -29,6 +29,7 @@ export function Home() {
             text={'Ver mais'}
             backgroundColorP={'#f3f3f3'}
             widthP={'auto'}
+            btnDisabled={true}
             // functionOnClick={}
           />
         );

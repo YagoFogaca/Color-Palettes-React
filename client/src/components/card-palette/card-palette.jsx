@@ -11,6 +11,7 @@ export function CardPalette({
   backgroundColorP,
   widthP,
   functionOnClick,
+  btnDisabled,
 }) {
   const [textCopy, setTextCopy] = useState(false);
 
@@ -51,12 +52,16 @@ export function CardPalette({
         })}
       </aside>
       <aside className="card-info">
-        <BtnSubmit
-          text={text}
-          backgroundColorP={backgroundColorP}
-          widthP={widthP}
-          // functionOnClick={}
-        />
+        {btnDisabled ? (
+          <BtnSubmit
+            text={text}
+            backgroundColorP={backgroundColorP}
+            widthP={widthP}
+            // functionOnClick={}
+          />
+        ) : (
+          <></>
+        )}
       </aside>
     </SectionStyled>
   );
