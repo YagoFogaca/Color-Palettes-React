@@ -15,9 +15,6 @@ export function Header() {
           Criar
         </Link>
         <Link className="navbar-link" to="*">
-          Curtidas
-        </Link>
-        <Link className="navbar-link" to="*">
           Coleção
         </Link>
         <Link className="navbar-link navbar-link-login" to="/login">
