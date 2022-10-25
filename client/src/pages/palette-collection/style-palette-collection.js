@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const SectionStyled = styled.section`
+export const SectionCollectionStyled = styled.section`
   margin: 2px;
   padding: 3rem 10rem;
   display: flex;

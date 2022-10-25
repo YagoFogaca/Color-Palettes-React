@@ -1,7 +1,7 @@
 import { api } from '../../utils/api/api';
 import { CardPalette } from '../../components/card-palette/card-palette';
 import { useEffect, useState } from 'react';
-import { SectionStyled } from './style-palette-collection';
+import { SectionCollectionStyled } from './style-palette-collection';
 
 export function PaletteCollection() {
   const [paletteUser, setPaletteUser] = useState([]);
@@ -16,24 +16,25 @@ export function PaletteCollection() {
   }, []);
 
   return (
-    <SectionStyled>
-      {paletteUser.map((palette, index) => {
-        return (
-          <CardPalette
-            key={index}
-            id={palette.id}
-            colors={palette.colors}
-            creationdate={palette.creationdate}
-            likes={palette.likes}
-            widthMax={'260px'}
-            text={'Ver mais'}
-            backgroundColorP={'#f3f3f3'}
-            widthP={'auto'}
-            btnDisabled={true}
-            // functionOnClick={}
-          />
-        );
-      })}
-    </SectionStyled>
+    <h2>Olá</h2>
+    // <SectionCollectionStyled>
+    //   {paletteUser.map((palette, index) => {
+    //     return (
+    //       <CardPalette
+    //         key={index}
+    //         id={palette.id}
+    //         colors={palette.colors}
+    //         creationdate={palette.creationdate}
+    //         likes={palette.likes}
+    //         widthMax={'260px'}
+    //         text={'Ver mais'}
+    //         backgroundColorP={'#f3f3f3'}
+    //         widthP={'auto'}
+    //         btnDisabled={true}
+    //         // functionOnClick={}
+    //       />
+    //     );
+    //   })}
+    // </SectionCollectionStyled>
   );
 }
