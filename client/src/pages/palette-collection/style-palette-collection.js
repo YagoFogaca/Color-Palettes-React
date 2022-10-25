@@ -15,7 +15,7 @@ export const SectionCollectionStyled = styled.section`
 
   h2 {
     font-size: 6rem;
-    color: #d72323;'
+    color: #d72323;
     border-bottom: 10px solid;
   }
 `;

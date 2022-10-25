@@ -16,25 +16,24 @@ export function PaletteCollection() {
   }, []);
 
   return (
-    <h2>Olá</h2>
-    // <SectionCollectionStyled>
-    //   {paletteUser.map((palette, index) => {
-    //     return (
-    //       <CardPalette
-    //         key={index}
-    //         id={palette.id}
-    //         colors={palette.colors}
-    //         creationdate={palette.creationdate}
-    //         likes={palette.likes}
-    //         widthMax={'260px'}
-    //         text={'Ver mais'}
-    //         backgroundColorP={'#f3f3f3'}
-    //         widthP={'auto'}
-    //         btnDisabled={true}
-    //         // functionOnClick={}
-    //       />
-    //     );
-    //   })}
-    // </SectionCollectionStyled>
+    <SectionCollectionStyled>
+      {paletteUser.map((palette, index) => {
+        return (
+          <CardPalette
+            key={index}
+            id={palette.id}
+            colors={palette.colors}
+            creationdate={palette.creationdate}
+            likes={palette.likes}
+            widthMax={'260px'}
+            text={'Ver mais'}
+            backgroundColorP={'#f3f3f3'}
+            widthP={'auto'}
+            btnDisabled={true}
+            // functionOnClick={}
+          />
+        );
+      })}
+    </SectionCollectionStyled>
   );
 }
