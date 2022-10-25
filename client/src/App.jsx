@@ -4,6 +4,7 @@ import { Home } from './pages/home/home';
 import { Login } from './pages/login/login';
 import { Auth } from './utils/api/auth/auth';
 import { CreatePalette } from './pages/create-palette/create-palette';
+import { PaletteCollection } from './pages/palette-collection/palette-collection';
 
 export function App() {
   return (
@@ -15,6 +16,7 @@ export function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/create-palette" element={<CreatePalette />} />
+          <Route path="/palette-collection" element={<PaletteCollection />} />
         </Routes>
       </BrowserRouter>
     </>

@@ -13,6 +13,15 @@ export class api {
     }
   }
 
+  static async getByIdUser(id_user) {
+    try {
+      const results = await axios.get('/palette/palettes/' + id_user);
+      return results.data;
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   static async updatePalette(palette) {
     try {
       const paletteUpdated = await axios.patch(
