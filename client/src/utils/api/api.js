@@ -25,6 +25,14 @@ export class api {
     }
   }
 
+  static async createPalette(palette) {
+    try {
+      return await axios.post('/palette/create-palette', palette);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   static async login(user) {
     try {
       const userLogin = await axios.post('/user/login', user);
