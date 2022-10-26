@@ -22,7 +22,6 @@ export function Home() {
             key={index}
             id={palette.id}
             colors={palette.colors}
-            creationdate={palette.creationdate}
             likes={palette.likes}
             widthMax={'260px'}
             text={'Ver mais'}
