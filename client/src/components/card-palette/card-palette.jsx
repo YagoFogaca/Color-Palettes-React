@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import copy from 'copy-to-clipboard';
 import { SectionStyled } from './style-card-palette';
+import { DivCard } from './div-card/div-card';
 import { BtnSubmit } from '../btn/btn-submit/btn-submit';
 
 export function CardPalette({
@@ -13,16 +14,6 @@ export function CardPalette({
   functionOnClick,
   btnDisabled,
 }) {
-  const [textCopy, setTextCopy] = useState(false);
-
-  function copyToClipboard(color) {
-    setTextCopy(true);
-    copy(color);
-    setTimeout(() => {
-      setTextCopy(false);
-    }, 1000);
-  }
-
   return (
     <SectionStyled
       style={{
@@ -31,24 +22,7 @@ export function CardPalette({
     >
       <aside className="card-colors">
         {colors.map((color, index) => {
-          return (
-            <div
-              className="card-color"
-              key={index}
-              style={{
-                backgroundColor: color,
-              }}
-            >
-              <span
-                onClick={(color) => {
-                  copyToClipboard(color.target.outerText);
-                }}
-                className="copy-color"
-              >
-                {textCopy ? 'Copiado' : color}
-              </span>
-            </div>
-          );
+          return <DivCard key={index} color={color} />;
         })}
       </aside>
       <aside className="card-info">
