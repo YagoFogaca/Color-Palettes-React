@@ -1,17 +1,19 @@
 import { SectionStyled } from './style-card-palette';
 import { DivCard } from './div-card/div-card';
 import { BtnSubmit } from '../btn/btn-submit/btn-submit';
+import { useNavigate } from 'react-router-dom';
 
 export function CardPalette({
   colors,
-  creationdate,
   widthMax,
   text,
   backgroundColorP,
   widthP,
-  functionOnClick,
   btnDisabled,
+  id,
 }) {
+  const navigate = useNavigate();
+
   return (
     <SectionStyled
       style={{
@@ -29,7 +31,9 @@ export function CardPalette({
             text={text}
             backgroundColorP={backgroundColorP}
             widthP={widthP}
-            // functionOnClick={}
+            functionOnClick={() => {
+              navigate(`/palette/${id}`);
+            }}
           />
         ) : (
           <></>
