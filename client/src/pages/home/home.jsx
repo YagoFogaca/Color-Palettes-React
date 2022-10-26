@@ -1,5 +1,4 @@
 import { MainStyled } from './style-home';
-// import { palettes } from '../../mocks/palettes';
 import { CardPalette } from '../../components/card-palette/card-palette';
 import { api } from '../../utils/api/api';
 import { useEffect, useState } from 'react';
@@ -30,7 +29,6 @@ export function Home() {
             backgroundColorP={'#f3f3f3'}
             widthP={'auto'}
             btnDisabled={true}
-            // functionOnClick={}
           />
         );
       })}
