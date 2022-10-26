@@ -4,36 +4,15 @@ export const SectionStyled = styled.section`
   width: 100%;
   min-width: 150px;
   height: fit-content;
+
   .card-colors {
     display: flex;
     flex-direction: column;
     margin-bottom: 1.7rem;
     overflow: hidden;
     border-radius: 10px;
+    border: 1px solid;
   }
-
-  // .card-color {
-  //   width: 100%;
-  //   height: 100px;
-  //   display: flex;
-  //   align-items: flex-end;
-  //   padding: 1rem 1rem 0 0;
-  //   cursor: pointer;
-  // }
-
-  // .copy-color {
-  //   display: none;
-  //   background-color: rgb(0 0 0 / 44%);
-  //   padding: 0.9rem;
-  //   border-radius: 5px;
-  //   font-size: 1.6rem;
-  //   color: #fff;
-  //   cursor: copy;
-  // }
-
-  // .card-color:hover .copy-color {
-  //   display: flex;
-  // }
 
   .card-info {
     display: flex;
