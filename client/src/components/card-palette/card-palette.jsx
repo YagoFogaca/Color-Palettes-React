@@ -1,5 +1,3 @@
-import { useState } from 'react';
-import copy from 'copy-to-clipboard';
 import { SectionStyled } from './style-card-palette';
 import { DivCard } from './div-card/div-card';
 import { BtnSubmit } from '../btn/btn-submit/btn-submit';
