@@ -51,6 +51,14 @@ export class api {
     }
   }
 
+  static async deletePalette(id) {
+    try {
+      return await axios.delete('/palette/delete-palette/' + id);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   static async login(user) {
     try {
       const userLogin = await axios.post('/user/login', user);

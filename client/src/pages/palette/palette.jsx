@@ -1,32 +1,50 @@
 import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import swal from 'sweetalert';
 import { api } from '../../utils/api/api';
 import { CardPalette } from '../../components/card-palette/card-palette';
 import { SectionStyledPalette } from './style-palette';
-import { useEffect, useState } from 'react';
 import { AsideColors } from '../../components/card-colors-info/card-colors-info';
 import { BtnSubmit } from '../../components/btn/btn-submit/btn-submit';
 
 export function Palette() {
+  const navigate = useNavigate();
   const { id } = useParams();
   const [palette, setPalette] = useState([]);
   const id_user = localStorage.getItem('userId');
-  console.log(id_user);
 
   async function getById(id) {
     const getPalette = await api.getById(id);
     setPalette([getPalette]);
   }
 
+  async function deletePalette(id) {
+    await api.deletePalette(id);
+    swal({
+      title: 'Paleta deletada com sucesso!',
+      text: 'Você será direcionado para a página Home',
+      icon: 'success',
+      dangerMode: true,
+      buttons: {
+        confirm: {
+          text: 'Confirmar',
+          value: true,
+          visible: true,
+          closeModal: true,
+        },
+      },
+    }).then(async (res) => {
+      if (res) {
+        navigate('/');
+      }
+    });
+  }
+
   useEffect(() => {
     getById(id);
   }, []);
-  // colors: (4)[('#2192FF', '#38E54D', '#9CFF2E', '#FDFF00')];
-  // creationdate: '20/10/22';
-  // id: 'VWQTVQSH2';
-  // id_user: '20NVELIPZ';
-  // likes: '15';
-  // __v: 0;
-  // _id: '6352d4ef07038b7555946726';
+
   return (
     <SectionStyledPalette>
       {palette.map((item, index) => {
@@ -61,6 +79,9 @@ export function Palette() {
                     text={'Deletar'}
                     widthP={'auto'}
                     typeP={'button'}
+                    functionOnClick={() => {
+                      deletePalette(item.id);
+                    }}
                   />
                 </aside>
               ) : (
