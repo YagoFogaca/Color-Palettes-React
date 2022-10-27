@@ -31,7 +31,7 @@ export const SectionStyledPalette = styled.section`
     font-size: 2.5rem;
   }
 
-  .card-edition {
+  .card-edit {
     width: 100%;
     display: flex;
     justify-content: space-around;

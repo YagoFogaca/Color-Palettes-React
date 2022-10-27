@@ -2,14 +2,13 @@ import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Modal from 'react-modal';
-import { CgClose } from 'react-icons/cg';
 import swal from 'sweetalert';
 import { api } from '../../utils/api/api';
 import { CardPalette } from '../../components/card-palette/card-palette';
 import { SectionStyledPalette } from './style-palette';
 import { AsideColors } from '../../components/card-colors-info/card-colors-info';
-import { BtnSubmit } from '../../components/btn/btn-submit/btn-submit';
-import { FormPalette } from '../../components/forms/form-palette/form-palette';
+import { ModalEdit } from '../../components/modal-edit/modal-edit';
+import { CardEdit } from '../../components/card-edit/card-edit';
 
 const customStyles = {
   content: {
@@ -36,6 +35,7 @@ export function Palette() {
   const { id } = useParams();
   const [palette, setPalette] = useState([]);
   const [modalIsOpen, setIsOpen] = useState(false);
+  const [paletteUpdated, setPaletteUpdated] = useState(false);
   const id_user = localStorage.getItem('userId');
 
   function openModal() {
@@ -100,11 +100,12 @@ export function Palette() {
       },
     });
     closeModal();
+    setPaletteUpdated(!paletteUpdated);
   }
 
   useEffect(() => {
     getById(id);
-  }, []);
+  }, [paletteUpdated]);
 
   return (
     <SectionStyledPalette>
@@ -131,24 +132,11 @@ export function Palette() {
                 <AsideColors colors={item.colors} />
 
                 {id_user === item.id_user ? (
-                  <aside className="card-edition">
-                    <BtnSubmit
-                      backgroundColorP={'#00ff00'}
-                      text={'Editar'}
-                      widthP={'auto'}
-                      typeP={'button'}
-                      functionOnClick={openModal}
-                    />
-                    <BtnSubmit
-                      backgroundColorP={'#ff0000'}
-                      text={'Deletar'}
-                      widthP={'auto'}
-                      typeP={'button'}
-                      functionOnClick={() => {
-                        deletePalette(item.id);
-                      }}
-                    />
-                  </aside>
+                  <CardEdit
+                    openModal={openModal}
+                    deletePalette={deletePalette}
+                    id={item.id}
+                  />
                 ) : (
                   <></>
                 )}
@@ -159,37 +147,10 @@ export function Palette() {
               onRequestClose={closeModal}
               style={customStyles}
             >
-              <button
-                style={{
-                  position: 'absolute',
-                  top: '0',
-                  right: '0',
-                  margin: '1rem',
-                  backgroundColor: 'transparent',
-                  border: 'none',
-                }}
-                onClick={closeModal}
-              >
-                <CgClose
-                  style={{
-                    color: '#d72323',
-                    fontSize: '4.5rem',
-                    cursor: 'pointer',
-                  }}
-                />
-              </button>
-
-              <FormPalette
-                msg={'Editar sua paleta: '}
+              <ModalEdit
                 colors={item.colors}
-                functionForm={updatePalette}
-                btns={[
-                  {
-                    text: 'Editar',
-                    backgroundColorP: '#00ff00',
-                    widthP: 'auto',
-                  },
-                ]}
+                closeModal={closeModal}
+                updatePalette={updatePalette}
               />
             </Modal>
           </>
