@@ -1,7 +1,17 @@
 import { Link } from 'react-router-dom';
 import { HeaderStyled } from './style-header';
+import { BiMenu } from 'react-icons/bi';
+import { NavbarDesktop } from './navbar-desktop/navbar-desktop';
+import { NavbarMobile } from './navbar-mobile/navbar-mobile';
+import { useState } from 'react';
 
 export function Header() {
+  const [menuMobile, setMenuMobile] = useState(false);
+
+  function menuOpen() {
+    setMenuMobile(!menuMobile);
+  }
+
   return (
     <HeaderStyled>
       <Link to="/">
@@ -10,17 +20,17 @@ export function Header() {
         </figure>
       </Link>
 
-      <nav id="navbar">
-        <Link className="navbar-link" to="/create-palette">
-          Criar
-        </Link>
-        <Link className="navbar-link" to="/palette-collection">
-          Coleção
-        </Link>
-        <Link className="navbar-link navbar-link-login" to="/login">
-          Login
-        </Link>
-      </nav>
+      <NavbarDesktop />
+
+      <button
+        id="btn-navbar-mobile"
+        onClick={() => {
+          menuOpen();
+        }}
+      >
+        <BiMenu id="navbar-mobile" />
+        {menuMobile ? <NavbarMobile functionBtn={menuOpen} /> : <></>}
+      </button>
     </HeaderStyled>
   );
 }
