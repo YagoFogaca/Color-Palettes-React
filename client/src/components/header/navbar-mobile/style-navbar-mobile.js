@@ -16,7 +16,7 @@ export const SectionStyled = styled.section`
     right: 0;
     top: 0;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
     gap: 5rem;
