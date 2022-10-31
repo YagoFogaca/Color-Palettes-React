@@ -68,6 +68,16 @@ export class api {
     }
   }
 
+  static async createUser(user) {
+    try {
+      const userLogin = await axios.post('/user/create-user', user);
+      console.log(userLogin);
+      return userLogin;
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   static async updateUser(user, user_id) {
     console.log(user);
     try {

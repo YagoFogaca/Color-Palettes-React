@@ -13,6 +13,11 @@ export const FormStyled = styled.form`
     font-size: 1.7rem;
   }
 
+  span {
+    font-size: 1.5rem;
+    color: #d72323;
+  }
+
   .card-btn {
     width: 100%;
     display: flex;

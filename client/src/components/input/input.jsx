@@ -1,6 +1,6 @@
 import { InputStyled } from './style-input';
 
-export function Input({ placeholder, id, name, type }) {
+export function Input({ placeholder, id, name, type, onChange = undefined }) {
   return (
     <InputStyled
       required
@@ -8,6 +8,7 @@ export function Input({ placeholder, id, name, type }) {
       placeholder={placeholder}
       id={id}
       name={name}
+      onChange={onChange}
     />
   );
 }
