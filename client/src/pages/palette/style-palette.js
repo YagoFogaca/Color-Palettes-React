@@ -43,5 +43,9 @@ export const SectionStyledPalette = styled.section`
     .card-palette {
       width: 100%;
     }
+
+    .modal-edit {
+      justify-content: center;
+    }
   }
 `;

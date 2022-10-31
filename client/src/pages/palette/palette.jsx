@@ -13,7 +13,7 @@ import { CardEdit } from '../../components/card-edit/card-edit';
 const customStyles = {
   content: {
     width: '70%',
-    minWidth: '500px',
+    minWidth: '300px',
     top: '50%',
     left: '50%',
     right: 'auto',
@@ -21,10 +21,7 @@ const customStyles = {
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
     display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    flexWrap: 'wrap',
+    padding: '4rem 2rem',
   },
 };
 

@@ -1,13 +1,14 @@
 import { FormPalette } from '../forms/form-palette/form-palette';
 import { CgClose } from 'react-icons/cg';
+import { SectionModalEdit } from './style-modal-edit';
 
 export function ModalEdit({ colors, closeModal, updatePalette }) {
   return (
-    <>
+    <SectionModalEdit>
       <button
         style={{
           position: 'absolute',
-          top: '0',
+          top: '-12px',
           right: '0',
           margin: '1rem',
           backgroundColor: 'transparent',
@@ -35,6 +36,6 @@ export function ModalEdit({ colors, closeModal, updatePalette }) {
           },
         ]}
       />
-    </>
+    </SectionModalEdit>
   );
 }
