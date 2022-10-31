@@ -1,15 +1,15 @@
+import swal from 'sweetalert';
+import { useNavigate } from 'react-router-dom';
 import { SectionCreatePalette } from './style-create-palette';
-import { useState } from 'react';
 import { api } from '../../utils/api/api';
-
 import { FormPalette } from '../../components/forms/form-palette/form-palette';
 
 export function CreatePalette() {
-  const [msg, setMsg] = useState('Crie sua paleta de cores:');
+  const navigate = useNavigate();
 
   async function createPalette(event) {
-    setMsg('Criando sua paleta');
     event.preventDefault();
+
     const timeElapsed = Date.now();
     const today = new Date(timeElapsed);
     const palette = {
@@ -23,20 +23,50 @@ export function CreatePalette() {
       creationdate: today.toLocaleDateString(),
       likes: '0',
     };
-
-    await api.createPalette(palette);
-
-    setMsg('Criando sua paleta criada com sucesso...');
-
-    setTimeout(() => {
-      setMsg('Crie sua paleta de cores:');
-    }, 3000);
+    try {
+      const createPalette = await api.createPalette(palette);
+      if (createPalette !== undefined) {
+        swal({
+          title: 'Paleta criada com sucesso!',
+          text: 'Você será direcionado para a página Home',
+          icon: 'success',
+          dangerMode: true,
+          buttons: {
+            confirm: {
+              text: 'Confirmar',
+              value: true,
+              visible: true,
+              closeModal: true,
+            },
+          },
+        }).then(async (res) => {
+          if (res) {
+            navigate('/');
+          }
+        });
+      }
+    } catch (error) {
+      swal({
+        title: 'Você não fez login!',
+        text: 'Você será direcionado para a página de Login',
+        icon: 'warning',
+        dangerMode: true,
+        buttons: {
+          confirm: {
+            text: 'Confirmar',
+            value: true,
+            visible: true,
+            closeModal: true,
+          },
+        },
+      });
+    }
   }
 
   return (
     <SectionCreatePalette>
       <FormPalette
-        msg={msg}
+        msg={'Crie sua paleta de cores:'}
         colors={['#999999', '#aaaaaa', '#bbbbbb', '#cccccc']}
         btns={[
           {
