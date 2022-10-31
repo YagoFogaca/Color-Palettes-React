@@ -40,4 +40,10 @@ export const SectionStyled = styled.section`
   .card-info span {
     font-size: 1.6rem;
   }
+
+  @media (max-width: 525px) {
+    & {
+      width: auto;
+    }
+  }
 `;

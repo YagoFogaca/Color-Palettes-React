@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const SectionCreatePalette = styled.section`
-  height: 85%;
+  padding: 2rem 0px;
   display: flex;
   align-items: center;
   justify-content: space-around;

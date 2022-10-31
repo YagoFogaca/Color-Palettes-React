@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 export const SectionStyledPalette = styled.section`
-  height: 89vh;
+  padding: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
 
   .card-palette {
     width: 80%;
-    height: 90%;
+    height: 89%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,6 +17,8 @@ export const SectionStyledPalette = styled.section`
 
   .card-infos {
     width: 50%;
+    min-width: 250px;
+    max-width: 450px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,5 +37,11 @@ export const SectionStyledPalette = styled.section`
     width: 100%;
     display: flex;
     justify-content: space-around;
+  }
+
+  @media (max-width: 765px) {
+    .card-palette {
+      width: 100%;
+    }
   }
 `;

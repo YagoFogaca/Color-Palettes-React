@@ -45,4 +45,19 @@ export const SectionFormPalette = styled.section`
     justify-content: center;
     margin-top: 1rem;
   }
+
+  @media (max-width: 525px) {
+    h2 {
+      font-size: 2rem;
+    }
+
+    label {
+      font-size: 1.6rem;
+    }
+
+    .form-palette input {
+      width: 60%;
+      height: 50px;
+    }
+  }
 `;
